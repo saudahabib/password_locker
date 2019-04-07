@@ -1,4 +1,4 @@
-import pyperclip
+import random
 class User :
     '''
     Class that generates new instances of a User
@@ -58,3 +58,10 @@ class User :
     def copy_password(cls, account):
         user_found = User.find_by_account(account)
         pyperclip.copy(user_found.username)
+
+
+class Credentials:
+    '''
+    Class credentials to store credentials for the users
+    '''
+    chars = 
