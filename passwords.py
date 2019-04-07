@@ -64,9 +64,17 @@ class Credentials:
     '''
     Class credentials to store credentials for the users
     '''
-    def __init__(self, password):
+    def __init__(self, account, password):
         self.password = password
     def generatePassword():
         chars = 'abcdefghijklmnopqrstuvwxyzABCDEFJHIJKLMNOPQRSTUVWXYZ1234567890'
         new_pass = ''.join(random.sample(chars, 5))
         return new_pass
+
+    def save_password(self):
+        '''
+        save_user method saves user names into the user list
+        '''
+        if User.account == Credentials.account:
+
+            Credentials.user_list.append(self)

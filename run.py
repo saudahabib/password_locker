@@ -10,6 +10,15 @@ def create_user(username, account):
     new_user = User(username, account)
     return new_user
 
+
+def create_password(account, password):
+    '''
+    Function to create new password
+    '''
+    new_pass = Credentials(account, password)
+    return new_pass
+
+
 def save_user(user):
     '''
     Function to save users
@@ -40,6 +49,11 @@ def display_users():
     '''
     return User.display_users()
 
+def save_password():
+    '''
+    Function that saves new password
+    '''
+    return Credentials.save_password()
 
 def main():
     print("Hello! Welcome to your Password Locker. What is your name?")
@@ -80,6 +94,7 @@ def main():
 
 
                     save_user(create_user(username, account)) # create and save new contact.
+                    save_password(create_password(account, username))
                     print ('\n')
                     print(f"New Credentials for {account} created")
                     print ('\n')
