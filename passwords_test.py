@@ -1,6 +1,6 @@
 import unittest
 from passwords import User
-import pyperclip
+
 
 class TestUser(unittest.TestCase):
     '''

@@ -1,5 +1,7 @@
 #!/usr/bin/env python3.6
 from passwords import User
+from passwords import Credentials
+import random
 
 def create_user(username, account):
     '''
@@ -52,13 +54,29 @@ def main():
 
             if short_code == 'cc':
                     print("New Contact")
-                    print("-"*10)
+                    print("*"*10)
 
                     print ("Which account is this?...")
                     account = input()
 
                     print("What's your username? ...")
                     username = input()
+
+                    print("Would you like a generated password or a customised one? Type c for customised and g for generated...")
+
+                    pass_choice = input().lower()
+
+                    if pass_choice == 'c':
+                        print("Enter a password here..")
+                        custom_pass = input()
+
+                    elif pass_choice == 'g':
+                        print("Here's a password we think will work for you...")
+                        print('\n')
+
+                        print(generatePassword())
+
+
 
 
                     save_user(create_user(username, account)) # create and save new contact.
@@ -73,7 +91,7 @@ def main():
                             print('\n')
 
                             for user in display_users():
-                                    print(f"{user.first_name} {user.last_name} .....{user.phone_number}")
+                                    print(f"{user.username}  .....{user.account}")
 
                             print('\n')
                     else:
@@ -91,7 +109,7 @@ def main():
                             print(f"Username: {search_account.username}")
                             print('-' * 20)
 
-                            print(f"Account name: {search_contact.phone_number}")
+                            print(f"Account name: {search_contact.account}")
 
                             print('-' * 20)
 
