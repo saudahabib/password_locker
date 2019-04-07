@@ -64,4 +64,9 @@ class Credentials:
     '''
     Class credentials to store credentials for the users
     '''
-    chars = 
+    def __init__(self, password):
+        self.password = password
+    def generatePassword():
+        chars = 'abcdefghijklmnopqrstuvwxyzABCDEFJHIJKLMNOPQRSTUVWXYZ1234567890'
+        new_pass = ''.join(random.sample(chars, 5))
+        return new_pass
