@@ -55,6 +55,12 @@ def save_password():
     '''
     return Credentials.save_password()
 
+def generate_password():
+    '''
+    Function that generates a password for the user
+    '''
+    return Credentials.generatePassword()
+
 def main():
     print("Hello! Welcome to your Password Locker. What is your name?")
     user_name = input()
@@ -88,7 +94,7 @@ def main():
                         print("Here's a password we think will work for you...")
                         print('\n')
 
-                        print(generatePassword())
+                        print(generate_password())
 
 
 
