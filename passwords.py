@@ -41,8 +41,8 @@ class User :
             Boolean: True or false depending if the user exists
         '''
 
-        for usern in cls.user_list:
-            if contact.account == account:
+        for user in cls.user_list:
+            if user.account == account:
                 return True
 
         return False
