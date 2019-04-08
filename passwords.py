@@ -4,9 +4,10 @@ class User :
     Class that generates new instances of a User
     '''
     user_list = []
-    def __init__(self, username, account):
+    def __init__(self, username, account,password):
         self.username = username
         self.account = account
+        self.password=password
 
     def save_user(self):
         '''
@@ -68,6 +69,7 @@ class Credentials:
     def __init__(self, account, password):
         self.password = password
         self.account = account
+
     def generatePassword():
         chars = 'abcdefghijklmnopqrstuvwxyzABCDEFJHIJKLMNOPQRSTUVWXYZ1234567890'
         new_pass = ''.join(random.sample(chars, 5))

@@ -4,11 +4,11 @@ from passwords import Credentials
 import random
 from getpass import getpass
 
-def create_user(username, account):
+def create_user(username, account,password):
     '''
     Function to create a new user
     '''
-    new_user = User(username, account)
+    new_user = User(username, account,password)
     return new_user
 
 
@@ -103,13 +103,14 @@ def main():
                     elif pass_choice == 'g':
                         print("Here's a password we think will work for you...")
                         print('\n')
-
                         print(generate_password())
+                        gene= generate_password()
 
 
 
 
-                    save_user(create_user(username, account)) # create and save new account.
+
+                    save_user(create_user(username, account,gene)) # create and save new account.
                     save_password(create_password(account, username))#create and save new password
                     print ('\n')
                     print(f"New Credentials for {account} created")
@@ -117,8 +118,8 @@ def main():
             elif short_code == 'del':
                 print("Enter name of account to be deleted")
                 delete_user = input()
-                if check_existing_user(delete_user):
-                    search_account = find_user(delete_user)
+                if check_existing_user(search_account):
+                    search_account = find_user(search_account)
                     delete_user(search_account)
                     print(f"{search_account.account} account credentials have been successfully deleted")
 
@@ -129,8 +130,9 @@ def main():
                             print('\n')
 
                             for user in display_users():
+                                    print(f"Username:....{user.username}")
+                                    print(f"password:....{user.password}")
                                     print(f" Account name: .....{user.account}")
-                                    print(f"....{user.username})
 
                             print('\n')
                     else:
