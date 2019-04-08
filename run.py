@@ -83,7 +83,7 @@ def main():
             short_code = input().lower()
 
             if short_code == 'cc':
-                    print("New Contact")
+                    print("New Account")
                     print("*"*50)
 
                     print ("Which account is this?...")
@@ -109,7 +109,7 @@ def main():
 
 
 
-                    save_user(create_user(username, account)) # create and save new contact.
+                    save_user(create_user(username, account)) # create and save new account.
                     save_password(create_password(account, username))#create and save new password
                     print ('\n')
                     print(f"New Credentials for {account} created")
@@ -117,6 +117,10 @@ def main():
             elif short_code == 'del':
                 print("Enter name of account to be deleted")
                 delete_user = input()
+                if check_existing_user(delete_user):
+                    search_account = find_user(delete_user)
+                    delete_user(search_account)
+                    print(f"{search_account.account} account credentials have been successfully deleted")
 
             elif short_code == 'dc':
 
@@ -125,7 +129,8 @@ def main():
                             print('\n')
 
                             for user in display_users():
-                                    print(f"{user.username}  .....{user.account}")
+                                    print(f" Account name: .....{user.account}")
+                                    print(f"....{user.username})
 
                             print('\n')
                     else:
@@ -143,7 +148,7 @@ def main():
                             print(f"Username: {search_account.username}")
                             print('-' * 20)
 
-                            print(f"Account name: {search_contact.account}")
+                            print(f"Account name: {search_account.account}")
 
                             print('-' * 20)
 

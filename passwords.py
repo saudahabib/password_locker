@@ -15,7 +15,7 @@ class User :
         User.user_list.append(self)
     def delete_user(self):
         '''
-        delete_user method deletes the user info from contact_list
+        delete_user method deletes the user info from user_list
         '''
         User.user_list.remove(self)
     @classmethod
