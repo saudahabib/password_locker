@@ -2,6 +2,7 @@
 from passwords import User
 from passwords import Credentials
 import random
+from getpass import getpass
 
 def create_user(username, account):
     '''
@@ -63,22 +64,14 @@ def generate_password():
 
 def main():
     print("Hello! Welcome to your Password Locker.Sign up below")
-    print("Password Locker Username:.....")
-    print('\n')
-    access_name = input().lower()
-    print("Password Locker Access Key:.....")
-    print('\n')
-    access_pass = input()
+    access_name = input("Password Locker Username: ").lower()
+    access_pass = getpass("Password Locker sign up key:  ")
     print("Log in using your sign-up credentials")
-    print("Username:..")
-    print('\n')
-    login_name = input().lower()
-    print("Password:..")
-    print('\n')
-    login_pass = input()
+    login_name = input("Log in with your username: ").lower()
+    login_pass = getpass("Please enter registered password: ")
     if access_pass == login_pass:
-
-        print(f"Hello {access_name}. what would you like to do?")
+        print('\n')
+        print(f"Welcome back {access_name}. What would you like to do?")
         print('\n')
 
     while access_pass == login_pass:
