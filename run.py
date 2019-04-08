@@ -49,11 +49,11 @@ def display_users():
     '''
     return User.display_users()
 
-def save_password():
+def save_password(credentials):
     '''
     Function that saves new password
     '''
-    return Credentials.save_password()
+    return credentials.save_password()
 
 def generate_password():
     '''
@@ -74,7 +74,7 @@ def main():
 
             if short_code == 'cc':
                     print("New Contact")
-                    print("*"*10)
+                    print("*"*50)
 
                     print ("Which account is this?...")
                     account = input()
@@ -100,7 +100,7 @@ def main():
 
 
                     save_user(create_user(username, account)) # create and save new contact.
-                    save_password(create_password(account, username))
+                    save_password(create_password(account, username))#create and save new password
                     print ('\n')
                     print(f"New Credentials for {account} created")
                     print ('\n')
