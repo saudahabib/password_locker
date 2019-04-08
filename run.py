@@ -154,6 +154,8 @@ def main():
 
                             print('-' * 20)
 
+                            print(f"Password: {search_account.password}")
+
                     else:
                             print("That account does not exist")
 
