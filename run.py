@@ -111,16 +111,16 @@ def main():
 
 
                     save_user(create_user(username, account,gene)) # create and save new account.
-                    save_password(create_password(account, username))#create and save new password
+                    # save_password(create_password(account, username))#create and save new password
                     print ('\n')
                     print(f"New Credentials for {account} created")
                     print ('\n')
             elif short_code == 'del':
                 print("Enter name of account to be deleted")
-                delete_user = input()
-                if check_existing_user(search_account):
-                    search_account = find_user(search_account)
-                    delete_user(search_account)
+                deli_user = input()
+                if check_existing_user(deli_user):
+                    search_account = find_user(deli_user)
+                    del_user(search_account)
                     print(f"{search_account.account} account credentials have been successfully deleted")
 
             elif short_code == 'dc':
