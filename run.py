@@ -30,7 +30,7 @@ def del_user(user):
     '''
     Function to delete a user
     '''
-    contact.test_delete_user()
+    user.delete_user()
 
 def find_user(account):
     '''
@@ -78,7 +78,7 @@ def main():
         print("Invalid username or password!")
 
     while access_pass == login_pass:
-            print("Use these short codes : cc - create a new account credentials, dc - display account credentials, fc -find an account's credentials, ex -exit Password Locker ")
+            print("Use these short codes : cc - create  new account credentials, dc - display account credentials, fc -find an account's credentials, ex -exit Password Locker, del - delete account credentials ")
 
             short_code = input().lower()
 
@@ -114,6 +114,9 @@ def main():
                     print ('\n')
                     print(f"New Credentials for {account} created")
                     print ('\n')
+            elif short_code == 'del':
+                print("Enter name of account to be deleted")
+                delete_user = input()
 
             elif short_code == 'dc':
 
