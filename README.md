@@ -9,11 +9,15 @@
 * Python vs3.6
 
 #### Setup instructions
+* On github, search saudahabib/password-Locker
+* Click on the green clone or download button on the top right corner of your screen
+* To run the application, pass the command  'chmod +x run.py' on terminal
+* Follow this command with ./run.py to use application
 
 #### Behaviour Driven Development
 | Behaviour   | Input   | Output|
 | :------------- | :------------- |:---------|
-| Welcomes user to app      | User name      | Welcome 'User-name'|
+| Accepts correct login credentials| User name & password     | Welcome 'User-name'|
 | Choose option| Select one of the short codes| Enable feature for that particular code|
 | Take user data| User data| User information|
 | Generate password| Select password generate option| New password|
