@@ -62,12 +62,26 @@ def generate_password():
     return Credentials.generatePassword()
 
 def main():
-    print("Hello! Welcome to your Password Locker. What is your name?")
-    user_name = input()
-    print(f"Hello {user_name}. what would you like to do?")
+    print("Hello! Welcome to your Password Locker.Sign up below")
+    print("Password Locker Username:.....")
     print('\n')
+    access_name = input().lower()
+    print("Password Locker Access Key:.....")
+    print('\n')
+    access_pass = input()
+    print("Log in using your sign-up credentials")
+    print("Username:..")
+    print('\n')
+    login_name = input().lower()
+    print("Password:..")
+    print('\n')
+    login_pass = input()
+    if access_pass == login_pass:
 
-    while True:
+        print(f"Hello {access_name}. what would you like to do?")
+        print('\n')
+
+    while access_pass == login_pass:
             print("Use these short codes : cc - create a new account credentials, dc - display account credentials, fc -find an account's credentials, ex -exit Password Locker ")
 
             short_code = input().lower()
@@ -141,6 +155,6 @@ def main():
                     print("Bye .......")
                     break
             else:
-                    print("I really didn't get that. Please use the short codes")
+                    print("Invalid input. Please try again")
 if __name__ == '__main__':
     main()
