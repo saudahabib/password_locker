@@ -74,6 +74,9 @@ def main():
         print(f"Welcome back {access_name}. What would you like to do?")
         print('\n')
 
+    else:
+        print("Invalid username or password!")
+
     while access_pass == login_pass:
             print("Use these short codes : cc - create a new account credentials, dc - display account credentials, fc -find an account's credentials, ex -exit Password Locker ")
 
