@@ -100,6 +100,9 @@ def main():
                         print("Enter a password here..")
                         custom_pass = input()
 
+                        gene=custom_pass
+
+
                     elif pass_choice == 'g':
                         print("Here's a password we think will work for you...")
                         print('\n')
@@ -111,7 +114,8 @@ def main():
 
 
                     save_user(create_user(username, account,gene)) # create and save new account.
-                    # save_password(create_password(account, username))#create and save new password
+                    # save_user(create_user(username,account,custom_pass))
+
                     print ('\n')
                     print(f"New Credentials for {account} created")
                     print ('\n')
